@@ -21,7 +21,7 @@ function jump() {
 
             //Descendo
             let downInterval = setInterval(() => {
-                if (position <= 0) {
+                if (position <= 60) {
                     clearInterval(downInterval);
                     isJumping = false;
                 } else {
@@ -31,7 +31,7 @@ function jump() {
             }, 20);
         } else {
             //Subindo
-            position += 20;
+            position += 130;
             dino.style.bottom = position + 'px';
         }
     }, 20);
@@ -40,7 +40,7 @@ function jump() {
 function createCactus() {
     const cactus = document.createElement('div');
     let cactusPosition = 1020;
-    let randomTime = Math.random() * 6000;
+    let randomTime = Math.random() * 8000;
 
     cactus.classList.add('cactus');
     cactus.style.left = 1020 + 'px';
@@ -57,7 +57,7 @@ function createCactus() {
             clearInterval(leftInterval);
             document.body.innerHTML = '<h1 class="game-over">Fim de Jogo!</h1>';
         } else {
-            cactusPosition -= 10;
+            cactusPosition -= 5;
             cactus.style.left = cactusPosition + 'px';
         }
     }, 20);
